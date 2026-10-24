@@ -1,777 +1,132 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cyberia AI Studio — Automation & Artificial Intelligence</title>
-    <meta name="description" content="Cyberia AI Studio designs and deploys AI workflows, automation systems, and intelligent integrations for modern businesses." />
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-
-    <!-- Primary meta -->
-    <meta name="robots" content="index, follow" />
+    <title>Cyberia Consulting: AI, automation and software advisory in Tunis</title>
+    <meta name="description" content="Cyberia Consulting helps companies decide what to automate, which software to adopt and what to build, and builds it when needed." />
     <link rel="canonical" href="https://cyberia.tn" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 
-    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://cyberia.tn" />
-    <meta property="og:site_name" content="Cyberia AI Studio" />
-    <meta property="og:title" content="Cyberia AI Studio — Automation & Artificial Intelligence" />
-    <meta property="og:description" content="Cyberia AI Studio designs and deploys AI workflows, automation systems, and intelligent integrations for modern businesses." />
-    <meta property="og:image" content="https://cyberia.tn/assets/preview.png" />
+    <meta property="og:site_name" content="Cyberia Consulting" />
+    <meta property="og:title" content="Cyberia Consulting: AI, automation and software advisory in Tunis" />
+    <meta property="og:description" content="Cyberia Consulting helps companies decide what to automate, which software to adopt and what to build, and builds it when needed." />
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="fr_FR" />
+    <meta name="twitter:card" content="summary" />
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Cyberia AI Studio — Automation & Artificial Intelligence" />
-    <meta name="twitter:description" content="Cyberia AI Studio designs and deploys AI workflows, automation systems, and intelligent integrations for modern businesses." />
-    <meta name="twitter:image" content="https://cyberia.tn/assets/preview.png" />
-
-    <!-- Hreflang -->
-    <link rel="alternate" hreflang="en" href="https://cyberia.tn" />
-    <link rel="alternate" hreflang="fr" href="https://cyberia.tn" />
-    <link rel="alternate" hreflang="x-default" href="https://cyberia.tn" />
-
-    <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "@id": "https://cyberia.tn",
-      "name": "Cyberia AI Studio",
-      "description": "AI automation studio — workflows, AI agents, and intelligent integrations for modern businesses.",
-      "url": "https://cyberia.tn",
-      "telephone": "+21650377851",
-      "email": "support@cyberia.tn",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "TN"
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Cyberia Consulting",
+        "url": "https://cyberia.tn",
+        "description": "Advisory on AI, automation and software decisions, with implementation when needed.",
+        "email": "support@cyberia.tn",
+        "telephone": "+21650377851",
+        "address": { "@type": "PostalAddress", "addressLocality": "Tunis", "addressCountry": "TN" }
       }
-    }
     </script>
-
-    <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- Lottie Web -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
-    <script src="assets/ai-and-automation.data.js"></script>
-
-    <style>
-      :root {
-        --ink: #0f0f0f;
-        --ink-secondary: #5a5a5a;
-        --ink-muted: #9a9a9a;
-        --rule: #e8e4df;
-        --surface: #faf9f7;
-        --surface-2: #f3f1ee;
-        --blue: #1a56db;
-        --blue-light: #eff4ff;
-        --blue-mid: #c7d7fc;
-        --accent: #0b3d91;
-      }
-
-      * { box-sizing: border-box; }
-
-      body {
-        font-family: 'DM Sans', sans-serif;
-        background: #faf9f7;
-        color: var(--ink);
-        -webkit-font-smoothing: antialiased;
-      }
-
-      .serif { font-family: 'DM Serif Display', serif; }
-
-      /* Scroll reveal */
-      [data-scroll] {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.65s cubic-bezier(.16,1,.3,1), transform 0.65s cubic-bezier(.16,1,.3,1);
-      }
-      [data-scroll].visible { opacity: 1; transform: translateY(0); }
-      [data-scroll][data-delay="1"] { transition-delay: 0.1s; }
-      [data-scroll][data-delay="2"] { transition-delay: 0.2s; }
-      [data-scroll][data-delay="3"] { transition-delay: 0.3s; }
-      [data-scroll][data-delay="4"] { transition-delay: 0.4s; }
-
-      /* Header */
-      #header {
-        border-bottom: 1px solid transparent;
-        transition: border-color 0.3s, background 0.3s;
-      }
-      #header.scrolled {
-        background: rgba(250, 249, 247, 0.97);
-        border-color: var(--rule);
-        backdrop-filter: blur(8px);
-      }
-
-      /* Rule decoration */
-      .section-rule {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 1.5rem;
-      }
-      .section-rule::before {
-        content: '';
-        display: block;
-        width: 28px;
-        height: 2px;
-        background: var(--blue);
-        flex-shrink: 0;
-      }
-
-      /* Editorial grid line */
-      .grid-line {
-        border-left: 1px solid var(--rule);
-        padding-left: 1.5rem;
-      }
-
-      /* Service cards */
-      .service-card {
-        position: relative;
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-        border: 1px solid var(--rule);
-      }
-      .service-card::after {
-        content: '';
-        position: absolute;
-        top: 0; left: 0;
-        width: 3px;
-        height: 0;
-        background: var(--blue);
-        transition: height 0.25s ease;
-        border-radius: 0 0 2px 2px;
-      }
-      .service-card:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(0,0,0,0.07); }
-      .service-card:hover::after { height: 100%; }
-
-      /* Blog cards */
-      .blog-card {
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-        border: 1px solid var(--rule);
-      }
-      .blog-card:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(0,0,0,0.07); }
-
-      /* Tag pill */
-      .tag {
-        display: inline-block;
-        font-size: 0.68rem;
-        font-weight: 600;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        padding: 3px 10px;
-        border-radius: 100px;
-        background: var(--blue-light);
-        color: var(--blue);
-      }
-
-      /* Step number */
-      .step-num {
-        font-family: 'DM Serif Display', serif;
-        font-size: 3.5rem;
-        line-height: 1;
-        color: var(--rule);
-        user-select: none;
-      }
-
-      /* Stat box */
-      .stat-box {
-        border-left: 1px solid var(--rule);
-        padding-left: 1.25rem;
-      }
-
-      /* Mobile menu */
-      .mobile-menu-wrap {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.35s cubic-bezier(.4,0,.2,1), opacity 0.3s;
-        opacity: 0;
-      }
-      .mobile-menu-wrap.open {
-        max-height: 440px;
-        opacity: 1;
-      }
-
-      /* Horizontal marquee strip */
-      .marquee-track {
-        display: flex;
-        width: max-content;
-        animation: marquee 22s linear infinite;
-      }
-      @keyframes marquee {
-        from { transform: translateX(0); }
-        to { transform: translateX(-50%); }
-      }
-
-      /* About pills */
-      .skill-pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        font-size: 0.78rem;
-        font-weight: 500;
-        color: var(--ink-secondary);
-        background: white;
-        border: 1px solid var(--rule);
-        border-radius: 100px;
-        padding: 5px 14px;
-        transition: border-color 0.2s, color 0.2s;
-      }
-      .skill-pill:hover { border-color: var(--blue-mid); color: var(--blue); }
-      .skill-pill::before {
-        content: '';
-        width: 6px; height: 6px;
-        border-radius: 50%;
-        background: var(--blue);
-        opacity: 0.6;
-      }
-
-      /* CTA button */
-      .btn-primary {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 0.7rem 1.4rem;
-        background: var(--blue);
-        color: white;
-        font-size: 0.875rem;
-        font-weight: 600;
-        border-radius: 8px;
-        transition: background 0.2s, transform 0.2s;
-        text-decoration: none;
-      }
-      .btn-primary:hover { background: var(--accent); transform: translateY(-1px); }
-
-      .btn-ghost {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 0.7rem 1.4rem;
-        background: transparent;
-        color: var(--ink);
-        font-size: 0.875rem;
-        font-weight: 600;
-        border-radius: 8px;
-        border: 1px solid var(--rule);
-        transition: border-color 0.2s, color 0.2s;
-        text-decoration: none;
-      }
-      .btn-ghost:hover { border-color: var(--blue-mid); color: var(--blue); }
-
-      /* Contact card */
-      .contact-tile {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-        padding: 1.25rem 1rem;
-        background: white;
-        border: 1px solid var(--rule);
-        border-radius: 12px;
-        text-decoration: none;
-        color: var(--ink-secondary);
-        transition: border-color 0.2s, color 0.2s, box-shadow 0.2s;
-      }
-      .contact-tile:hover { border-color: var(--blue-mid); color: var(--blue); box-shadow: 0 4px 18px rgba(26,86,219,0.08); }
-
-      /* Insight tag color variants */
-      .tag-strategy { background: #fffbeb; color: #92400e; }
-      .tag-engineering { background: #f0fdf4; color: #166534; }
-      .tag-integration { background: #eff4ff; color: var(--blue); }
-      .tag-strategie { background: #fffbeb; color: #92400e; }
-      .tag-ingenierie { background: #f0fdf4; color: #166534; }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
-
   <body>
-
-    <!-- ===================== HEADER ===================== -->
-    <header id="header" class="fixed top-0 left-0 w-full z-50 bg-transparent transition-all duration-300">
-      <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
-        <!-- Logo -->
-        <a href="#home" class="flex items-center no-underline gap-2">
-          <span class="serif text-xl" style="color:var(--ink)" data-translate="heroTagline">Cyberia AI Studio</span>
-        </a>
-
-        <!-- Desktop Nav -->
-        <nav class="hidden md:flex items-center gap-7 text-sm font-medium" style="color:var(--ink-secondary)">
-          <a href="#about" class="hover:text-blue-600 transition-colors" data-translate="navAbout">About</a>
-          <a href="#services" class="hover:text-blue-600 transition-colors" data-translate="navServices">Services</a>
-          <a href="#insights" class="hover:text-blue-600 transition-colors" data-translate="navInsights">Insights</a>
-          <a href="#contact" class="hover:text-blue-600 transition-colors" data-translate="navContact">Contact</a>
-            <button id="lang-toggle-desktop" class="flex items-center gap-1.5 px-3 py-1.5 rounded-md border text-xs font-semibold transition-colors hover:border-blue-300 hover:text-blue-600" style="border-color:var(--rule); color:var(--ink-secondary)">
-              <span id="current-lang">EN</span>
-            </button>
+    <header class="site-header">
+      <div class="wrap header-row">
+        <a class="brand" href="#top">Cyberia <span>Consulting</span></a>
+        <nav class="nav" aria-label="Main">
+          <a href="#services" data-i18n="navServices">Services</a>
+          <a href="#approach" data-i18n="navApproach">Approach</a>
+          <a href="#contact" data-i18n="navContact">Contact</a>
         </nav>
-
-        <!-- Mobile hamburger -->
-        <button id="mobile-menu-btn" class="md:hidden p-1.5 rounded-md transition-colors hover:text-blue-600" style="color:var(--ink-secondary)" aria-label="Menu">
-          <i id="hamburger-icon" class="fa-solid fa-bars text-lg"></i>
-        </button>
-      </div>
-
-      <!-- Mobile Nav -->
-      <div id="mobile-menu" class="mobile-menu-wrap md:hidden border-t" style="background:#faf9f7; border-color:var(--rule)">
-        <nav class="flex flex-col px-5 pt-3 pb-5 gap-0.5 text-sm font-medium" style="color:var(--ink-secondary)">
-          <a href="#about" class="py-2.5 hover:text-blue-600 transition-colors" data-translate="navAbout">About</a>
-          <a href="#services" class="py-2.5 hover:text-blue-600 transition-colors" data-translate="navServices">Services</a>
-          <a href="#insights" class="py-2.5 hover:text-blue-600 transition-colors" data-translate="navInsights">Insights</a>
-          <a href="#contact" class="py-2.5 hover:text-blue-600 transition-colors" data-translate="navContact">Contact</a>
-          <hr class="my-2" style="border-color:var(--rule)" />
-          <button id="lang-toggle-mobile" class="flex items-center gap-2 py-2.5 hover:text-blue-600 transition-colors w-fit">
-              <span id="current-lang-mobile">EN</span>
-            </button>
-        </nav>
+        <button class="lang" type="button" id="lang-toggle" aria-label="Passer en français">FR</button>
       </div>
     </header>
 
-    <!-- ===================== HERO ===================== -->
-    <section id="home" class="pt-32 pb-20 px-5 relative overflow-hidden" style="background: var(--surface)">
-      <!-- Subtle texture lines -->
-      <div class="absolute inset-0 pointer-events-none" style="background-image: repeating-linear-gradient(90deg, transparent, transparent calc(100%/12 - 1px), rgba(0,0,0,0.025) calc(100%/12 - 1px), rgba(0,0,0,0.025) calc(100%/12)); background-size: 100% 100%;"></div>
-
-      <div class="max-w-6xl mx-auto relative">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
-          <!-- Left -->
-          <div>
-            <div class="section-rule" data-scroll>
-              <span class="text-xs font-semibold tracking-widest uppercase" style="color:var(--blue)" data-translate="heroEyebrow">AI Automation Studio</span>
-            </div>
-            <h1 class="serif text-5xl sm:text-6xl md:text-[3.75rem] leading-[1.08] tracking-tight mb-6" style="color:var(--ink)" data-scroll data-delay="1" data-translate="heroTitle">
-              We automate the<br/>work. You focus<br/>on the vision.
-            </h1>
-            <p class="text-base sm:text-lg leading-relaxed mb-8 max-w-md" style="color:var(--ink-secondary)" data-scroll data-delay="2" data-translate="heroSubtitle">
-              Cyberia AI Studio designs and deploys intelligent workflows, autonomous agents, and AI integrations that eliminate bottlenecks and scale your operations.
-            </p>
-            <div class="flex flex-wrap gap-3" data-scroll data-delay="3">
-              <a href="#services" class="btn-primary" data-translate="heroCtaServices">Explore Services</a>
-              <a href="#contact" class="btn-ghost" data-translate="heroCtaContact">Start a Project</a>
-            </div>
-            <!-- Stats -->
-            <div class="flex gap-8 mt-12 pt-8 border-t" style="border-color:var(--rule)" data-scroll data-delay="4">
-              <div class="stat-box">
-                <div class="serif text-3xl" style="color:var(--ink)">40+</div>
-                <div class="text-xs mt-0.5" style="color:var(--ink-muted)" data-translate="heroStat1">Workflows deployed</div>
-              </div>
-              <div class="stat-box">
-                <div class="serif text-3xl" style="color:var(--ink)">2k+</div>
-                <div class="text-xs mt-0.5" style="color:var(--ink-muted)" data-translate="heroStat2">Hours saved / month</div>
-              </div>
-              <div class="stat-box">
-                <div class="serif text-3xl" style="color:var(--ink)">30+</div>
-                <div class="text-xs mt-0.5" style="color:var(--ink-muted)" data-translate="heroStat3">Integration types</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right: Lottie Animation -->
-          <div class="hidden md:flex items-center justify-center" data-scroll data-delay="2">
-            <div id="lottie-container" style="width: 100%; max-width: 520px; aspect-ratio: 455 / 412;"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Tech marquee strip -->
-    <div class="overflow-hidden border-y py-3" style="background:white; border-color:var(--rule)">
-      <div class="marquee-track gap-12 items-center text-xs font-medium tracking-wide uppercase" style="color:var(--ink-muted)">
-        <span class="whitespace-nowrap px-6">n8n</span>
-        <span style="color:var(--rule)">·</span>
-        <span class="whitespace-nowrap px-6">Make / Integromat</span>
-        <span style="color:var(--rule)">·</span>
-        <span class="whitespace-nowrap px-6">OpenAI</span>
-        <span style="color:var(--rule)">·</span>
-        <span class="whitespace-nowrap px-6">Anthropic Claude</span>
-        <span style="color:var(--rule)">·</span>
-        <span class="whitespace-nowrap px-6">LangChain</span>
-        <span style="color:var(--rule)">·</span>
-        <span class="whitespace-nowrap px-6">Zapier</span>
-        <span style="color:var(--rule)">·</span>
-        <span class="whitespace-nowrap px-6">Pinecone</span>
-        <span style="color:var(--rule)">·</span>
-        <span class="whitespace-nowrap px-6">Supabase</span>
-        <span style="color:var(--rule)">·</span>
-        <span class="whitespace-nowrap px-6">REST APIs</span>
-        <span style="color:var(--rule)">·</span>
-        <span class="whitespace-nowrap px-6">Webhooks</span>
-        <span style="color:var(--rule)">·</span>
-        <!-- duplicate for seamless loop -->
-        <span class="whitespace-nowrap px-6">n8n</span>
-        <span style="color:var(--rule)">·</span>
-        <span class="whitespace-nowrap px-6">Make / Integromat</span>
-        <span style="color:var(--rule)">·</span>
-        <span class="whitespace-nowrap px-6">OpenAI</span>
-        <span style="color:var(--rule)">·</span>
-        <span class="whitespace-nowrap px-6">Anthropic Claude</span>
-        <span style="color:var(--rule)">·</span>
-        <span class="whitespace-nowrap px-6">LangChain</span>
-        <span style="color:var(--rule)">·</span>
-        <span class="whitespace-nowrap px-6">Zapier</span>
-        <span style="color:var(--rule)">·</span>
-        <span class="whitespace-nowrap px-6">Pinecone</span>
-        <span style="color:var(--rule)">·</span>
-        <span class="whitespace-nowrap px-6">Supabase</span>
-        <span style="color:var(--rule)">·</span>
-        <span class="whitespace-nowrap px-6">REST APIs</span>
-        <span style="color:var(--rule)">·</span>
-        <span class="whitespace-nowrap px-6">Webhooks</span>
-        <span style="color:var(--rule)">·</span>
-      </div>
-    </div>
-
-    <!-- ===================== ABOUT ===================== -->
-    <section id="about" class="py-24 px-5" style="background:white">
-      <div class="max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
-          <!-- Left label col -->
-          <div>
-            <div class="section-rule" data-scroll>
-              <span class="text-xs font-semibold tracking-widest uppercase" style="color:var(--blue)" data-translate="aboutEyebrow">Who We Are</span>
-            </div>
-            <h2 class="serif text-4xl sm:text-5xl leading-[1.1] mb-8" style="color:var(--ink)" data-scroll data-delay="1" data-translate="aboutTitle">
-              Built by engineers.<br/>Obsessed with automation.
-            </h2>
-            <!-- Skill pills -->
-            <div class="flex flex-wrap gap-2" data-scroll data-delay="2">
-              <span class="skill-pill" data-translate="aboutPill1">LLM Orchestration</span>
-              <span class="skill-pill" data-translate="aboutPill2">Process Automation</span>
-              <span class="skill-pill" data-translate="aboutPill3">API Integrations</span>
-              <span class="skill-pill" data-translate="aboutPill4">AI Agents</span>
-              <span class="skill-pill" data-translate="aboutPill5">Data Pipelines</span>
-              <span class="skill-pill" data-translate="aboutPill6">RAG Systems</span>
-            </div>
-          </div>
-
-          <!-- Right text col -->
-          <div class="grid-line" data-scroll data-delay="1">
-            <p class="text-lg leading-relaxed" style="color:var(--ink-secondary)" data-translate="aboutText">
-              Cyberia AI Studio is a boutique team of automation engineers and AI specialists based in Tunisia. We partner with growth-stage companies and enterprises to replace manual friction with intelligent systems — from data pipelines to multi-agent orchestrations. We don't just deliver tools. We deliver leverage.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== SERVICES ===================== -->
-    <section id="services" class="py-24 px-5" style="background:var(--surface)">
-      <div class="max-w-6xl mx-auto">
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
-          <div>
-            <div class="section-rule" data-scroll>
-              <span class="text-xs font-semibold tracking-widest uppercase" style="color:var(--blue)" data-translate="servicesEyebrow">What We Build</span>
-            </div>
-            <h2 class="serif text-4xl sm:text-5xl leading-[1.1]" style="color:var(--ink)" data-scroll data-delay="1" data-translate="servicesTitle">
-              End-to-end AI capabilities<br/>for modern businesses.
-            </h2>
+    <main id="top">
+      <section class="hero wrap">
+        <div class="hero-text">
+          <h1 data-i18n="heroTitle">Better decisions about AI and software.</h1>
+          <p class="lead" data-i18n="heroLead">
+            Cyberia Consulting helps companies decide what to automate, which tools to adopt and what to build. When the answer is a custom tool, we build that too.
+          </p>
+          <div class="actions">
+            <a class="btn btn-solid" href="#contact" data-i18n="ctaContact">Talk to us</a>
+            <a class="btn btn-quiet" href="#services" data-i18n="ctaServices">What we do</a>
           </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          <!-- Service 1 -->
-          <div class="service-card bg-white rounded-xl p-8" data-scroll>
-            <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-5 text-blue-600" style="background:var(--blue-light)">
-              <i class="fa-solid fa-robot"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-1" style="color:var(--ink)" data-translate="service1Title">Automation Engineering</h3>
-            <span class="tag mb-4 block" data-translate="service1Tag">Workflows · RPA · Data</span>
-            <p class="text-sm leading-relaxed" style="color:var(--ink-secondary)" data-translate="service1Desc"></p>
-          </div>
-          <!-- Service 2 -->
-          <div class="service-card bg-white rounded-xl p-8" data-scroll data-delay="1">
-            <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-5 text-blue-600" style="background:var(--blue-light)">
-              <i class="fa-solid fa-diagram-project"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-1" style="color:var(--ink)" data-translate="service2Title">AI Workflow Design</h3>
-            <span class="tag mb-4 block" data-translate="service2Tag">LLMs · Agents · RAG</span>
-            <p class="text-sm leading-relaxed" style="color:var(--ink-secondary)" data-translate="service2Desc"></p>
-          </div>
-          <!-- Service 3 -->
-          <div class="service-card bg-white rounded-xl p-8" data-scroll data-delay="2">
-            <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-5 text-blue-600" style="background:var(--blue-light)">
-              <i class="fa-solid fa-plug"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-1" style="color:var(--ink)" data-translate="service3Title">System Integration</h3>
-            <span class="tag mb-4 block" data-translate="service3Tag">APIs · Webhooks · ETL</span>
-            <p class="text-sm leading-relaxed" style="color:var(--ink-secondary)" data-translate="service3Desc"></p>
-          </div>
-          <!-- Service 4 -->
-          <div class="service-card bg-white rounded-xl p-8" data-scroll data-delay="3">
-            <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-5 text-blue-600" style="background:var(--blue-light)">
-              <i class="fa-solid fa-lightbulb"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-1" style="color:var(--ink)" data-translate="service4Title">AI Strategy & Consulting</h3>
-            <span class="tag mb-4 block" data-translate="service4Tag">Audit · Roadmap · Advisory</span>
-            <p class="text-sm leading-relaxed" style="color:var(--ink-secondary)" data-translate="service4Desc"></p>
-          </div>
-        </div>
-      </div>
-    </section>
+        <aside class="door" aria-labelledby="door-title">
+          <h2 id="door-title" data-i18n="doorTitle">Weighing a decision?</h2>
+          <p data-i18n="doorText">A new tool, a vendor quote, a project you're unsure about. Send us a few lines and we'll reply with our first read on it.</p>
+          <a class="btn btn-light" href="mailto:support@cyberia.tn">support@cyberia.tn</a>
+        </aside>
+      </section>
 
-    <!-- ===================== INSIGHTS ===================== -->
-    <section id="insights" class="py-24 px-5" style="background:white">
-      <div class="max-w-6xl mx-auto">
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
-          <div>
-            <div class="section-rule" data-scroll>
-              <span class="text-xs font-semibold tracking-widest uppercase" style="color:var(--blue)" data-translate="insightsEyebrow">From The Studio</span>
-            </div>
-            <h2 class="serif text-4xl sm:text-5xl leading-[1.1]" style="color:var(--ink)" data-scroll data-delay="1" data-translate="insightsTitle">
-              Insights on AI,<br/>automation & the future of work.
-            </h2>
-          </div>
-        </div>
+      <section class="section wrap" id="services">
+        <h2 class="section-title" data-i18n="servicesTitle">What we do</h2>
+        <ul class="services">
+          <li>
+            <h3 data-i18n="s1Title">AI and automation strategy</h3>
+            <p data-i18n="s1Text">Where AI is worth it in your company, in what order, and what it will cost. You get a plan your team can follow without us.</p>
+          </li>
+          <li>
+            <h3 data-i18n="s2Title">Process and systems audits</h3>
+            <p data-i18n="s2Text">We look at how work moves through your teams and tools, and show you where time and money are being lost.</p>
+          </li>
+          <li>
+            <h3 data-i18n="s3Title">Software and vendor choices</h3>
+            <p data-i18n="s3Text">A second opinion on platforms, vendors and development quotes before you commit budget to them.</p>
+          </li>
+          <li>
+            <h3 data-i18n="s4Title">Building, when it's needed</h3>
+            <p data-i18n="s4Text">If the right answer is a custom tool, an automation or an integration, we build it and hand it over to your team.</p>
+          </li>
+        </ul>
+      </section>
 
-        <!-- Featured + 2 cards -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <!-- Featured (spans 2 cols on md) -->
-          <article class="blog-card bg-white rounded-xl overflow-hidden md:col-span-2 flex flex-col" data-scroll>
-            <div class="w-full h-72 relative overflow-hidden">
-              <img src="assets/image-01.jpg" alt="" data-translate-alt="insight1Alt" class="w-full h-full object-cover" loading="lazy" />
-            </div>
-            <div class="p-7 flex flex-col flex-1">
-              <p class="text-xs mb-3" style="color:var(--ink-muted)" data-translate="insight1Date">May 12, 2026</p>
-              <h3 class="serif text-2xl leading-snug mb-3" style="color:var(--ink)" data-translate="insight1Title">The Real ROI of AI Automation in 2026</h3>
-              <p class="text-sm leading-relaxed flex-1" style="color:var(--ink-secondary)" data-translate="insight1Excerpt"></p>
-            </div>
-          </article>
+      <section class="section wrap" id="approach">
+        <h2 class="section-title" data-i18n="approachTitle">How we work</h2>
+        <ol class="steps">
+          <li>
+            <h3 data-i18n="a1Title">Conversation</h3>
+            <p data-i18n="a1Text">You tell us what you're trying to solve. We ask questions until we understand the decision in front of you.</p>
+          </li>
+          <li>
+            <h3 data-i18n="a2Title">Assessment</h3>
+            <p data-i18n="a2Text">We study your processes, tools and constraints, and talk to the people who do the work.</p>
+          </li>
+          <li>
+            <h3 data-i18n="a3Title">Recommendation</h3>
+            <p data-i18n="a3Text">A written recommendation with options, costs and trade-offs, so you can decide with confidence.</p>
+          </li>
+          <li>
+            <h3 data-i18n="a4Title">Delivery, if you want it</h3>
+            <p data-i18n="a4Text">We build the solution ourselves, or support your team or vendor while they do.</p>
+          </li>
+        </ol>
+      </section>
 
-          <!-- Side cards -->
-          <div class="flex flex-col gap-6">
-            <article class="blog-card bg-white rounded-xl overflow-hidden flex flex-col flex-1" data-scroll data-delay="1">
-              <div class="w-full h-28 relative overflow-hidden">
-                <img src="assets/image-02.jpg" alt="" data-translate-alt="insight2Alt" class="w-full h-full object-cover" loading="lazy" />
-              </div>
-              <div class="p-6 flex flex-col flex-1">
-                <p class="text-xs mb-2" style="color:var(--ink-muted)" data-translate="insight2Date">Apr 28, 2026</p>
-                <h3 class="font-bold text-base leading-snug mb-2" style="color:var(--ink)" data-translate="insight2Title">Building Smarter Workflows with LLMs</h3>
-                <p class="text-xs leading-relaxed flex-1" style="color:var(--ink-secondary)" data-translate="insight2Excerpt"></p>
-              </div>
-            </article>
+      <section class="section wrap" id="contact">
+        <h2 class="section-title" data-i18n="contactTitle">Contact</h2>
+        <dl class="contact-list">
+          <div><dt data-i18n="cEmail">Email</dt><dd><a href="mailto:support@cyberia.tn">support@cyberia.tn</a></dd></div>
+          <div><dt data-i18n="cPhone">Phone</dt><dd><a href="tel:+21650377851">+216 50 377 851</a></dd></div>
+          <div><dt>WhatsApp</dt><dd><a href="https://wa.me/21650377851">+216 50 377 851</a></dd></div>
+          <div><dt data-i18n="cOffice">Office</dt><dd data-i18n="cCity">Tunis, Tunisia</dd></div>
+        </dl>
+      </section>
+    </main>
 
-            <article class="blog-card bg-white rounded-xl overflow-hidden flex flex-col flex-1" data-scroll data-delay="2">
-              <div class="w-full h-28 relative overflow-hidden">
-                <img src="assets/image-03.jpg" alt="" data-translate-alt="insight3Alt" class="w-full h-full object-cover" loading="lazy" />
-              </div>
-              <div class="p-6 flex flex-col flex-1">
-                <p class="text-xs mb-2" style="color:var(--ink-muted)" data-translate="insight3Date">Apr 14, 2026</p>
-                <h3 class="font-bold text-base leading-snug mb-2" style="color:var(--ink)" data-translate="insight3Title">Integrating AI Without Breaking What Works</h3>
-                <p class="text-xs leading-relaxed flex-1" style="color:var(--ink-secondary)" data-translate="insight3Excerpt"></p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== PROCESS ===================== -->
-    <section id="process" class="py-24 px-5" style="background:var(--surface)">
-      <div class="max-w-6xl mx-auto">
-        <div class="mb-14">
-          <div class="section-rule" data-scroll>
-            <span class="text-xs font-semibold tracking-widest uppercase" style="color:var(--blue)" data-translate="processEyebrow">How We Work</span>
-          </div>
-          <h2 class="serif text-4xl sm:text-5xl leading-[1.1]" style="color:var(--ink)" data-scroll data-delay="1" data-translate="processTitle">
-            From discovery to deployment,<br/>with zero ambiguity.
-          </h2>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-0">
-          <!-- Step 1 -->
-          <div class="p-8 border-b sm:border-b-0 sm:border-r" style="border-color:var(--rule)" data-scroll>
-            <div class="step-num">01</div>
-            <h3 class="font-bold text-base mt-3 mb-2" style="color:var(--ink)" data-translate="step1Title">Audit</h3>
-            <p class="text-sm leading-relaxed" style="color:var(--ink-secondary)" data-translate="step1Desc"></p>
-          </div>
-          <!-- Step 2 -->
-          <div class="p-8 border-b sm:border-b-0 sm:border-r" style="border-color:var(--rule)" data-scroll data-delay="1">
-            <div class="step-num">02</div>
-            <h3 class="font-bold text-base mt-3 mb-2" style="color:var(--ink)" data-translate="step2Title">Design</h3>
-            <p class="text-sm leading-relaxed" style="color:var(--ink-secondary)" data-translate="step2Desc"></p>
-          </div>
-          <!-- Step 3 -->
-          <div class="p-8 border-b sm:border-b-0 sm:border-r" style="border-color:var(--rule)" data-scroll data-delay="2">
-            <div class="step-num">03</div>
-            <h3 class="font-bold text-base mt-3 mb-2" style="color:var(--ink)" data-translate="step3Title">Build</h3>
-            <p class="text-sm leading-relaxed" style="color:var(--ink-secondary)" data-translate="step3Desc"></p>
-          </div>
-          <!-- Step 4 -->
-          <div class="p-8" data-scroll data-delay="3">
-            <div class="step-num">04</div>
-            <h3 class="font-bold text-base mt-3 mb-2" style="color:var(--ink)" data-translate="step4Title">Scale</h3>
-            <p class="text-sm leading-relaxed" style="color:var(--ink-secondary)" data-translate="step4Desc"></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== CONTACT ===================== -->
-    <section id="contact" class="py-24 px-5" style="background:white">
-      <div class="max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
-          <div>
-            <div class="section-rule" data-scroll>
-              <span class="text-xs font-semibold tracking-widest uppercase" style="color:var(--blue)" data-translate="contactEyebrow">Get In Touch</span>
-            </div>
-            <h2 class="serif text-4xl sm:text-5xl leading-[1.1] mb-6" style="color:var(--ink)" data-scroll data-delay="1" data-translate="contactTitle">
-              Let's build something<br/>that actually works.
-            </h2>
-            <p class="text-base leading-relaxed" style="color:var(--ink-secondary)" data-scroll data-delay="2" data-translate="contactSubtitle">
-              Whether you have a detailed brief or just a rough idea, we'll help you figure out the right path forward.
-            </p>
-          </div>
-
-          <div class="grid grid-cols-1 gap-4" data-scroll data-delay="1">
-            <a href="mailto:support@cyberia.tn" class="contact-tile flex-row gap-4 p-5" style="flex-direction:row; align-items:center">
-              <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background:var(--blue-light); color:var(--blue)">
-                <i class="fa-solid fa-envelope"></i>
-              </div>
-              <div class="text-left">
-                <div class="text-xs font-semibold uppercase tracking-wide mb-0.5" style="color:var(--ink-muted)">Email</div>
-                <div class="text-sm font-medium" style="color:var(--ink)" data-translate="contactEmail">support@cyberia.tn</div>
-              </div>
-            </a>
-            <a href="tel:+21650377851" class="contact-tile flex-row gap-4 p-5" style="flex-direction:row; align-items:center">
-              <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background:var(--blue-light); color:var(--blue)">
-                <i class="fa-solid fa-phone"></i>
-              </div>
-              <div class="text-left">
-                <div class="text-xs font-semibold uppercase tracking-wide mb-0.5" style="color:var(--ink-muted)">Phone</div>
-                <div class="text-sm font-medium" style="color:var(--ink)" data-translate="contactPhone">+216 50 377 851</div>
-              </div>
-            </a>
-            <a href="https://wa.me/21650377851" target="_blank" rel="noopener noreferrer" class="contact-tile flex-row gap-4 p-5" style="flex-direction:row; align-items:center">
-              <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background:var(--blue-light); color:#25D366">
-                <i class="fa-brands fa-whatsapp"></i>
-              </div>
-              <div class="text-left">
-                <div class="text-xs font-semibold uppercase tracking-wide mb-0.5" style="color:var(--ink-muted)">WhatsApp</div>
-                <div class="text-sm font-medium" style="color:var(--ink)" data-translate="contactWhatsApp">+216 50 377 851</div>
-              </div>
-            </a>
-            <div class="contact-tile flex-row gap-4 p-5" style="flex-direction:row; align-items:center">
-              <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background:var(--blue-light); color:var(--blue)">
-                <i class="fa-solid fa-location-dot"></i>
-              </div>
-              <div class="text-left">
-                <div class="text-xs font-semibold uppercase tracking-wide mb-0.5" style="color:var(--ink-muted)">Location</div>
-                <div class="text-sm font-medium" style="color:var(--ink)" data-translate="contactLocation">Tunis, Tunisia</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== FOOTER ===================== -->
-    <footer class="py-10 px-5 border-t" style="border-color:var(--rule)">
-      <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div class="flex items-center gap-3">
-          <span class="serif text-xl" style="color:var(--ink)">Cyberia AI Studio</span>
-          <span class="text-sm" style="color:var(--ink-secondary)" data-translate="footerTagline">Intelligence, automated.</span>
-        </div>
-        <p class="text-sm" style="color:var(--ink-secondary)" data-translate="footerText">© 2026 Cyberia AI Studio. All rights reserved.</p>
-      </div>
+    <footer class="site-footer wrap">
+      <p>© 2026 Cyberia Consulting</p>
     </footer>
 
-    <!-- ===================== SCRIPTS ===================== -->
-    <script src="translations.js"></script>
-    <script>
-      /* --- Language --- */
-      let currentLang = (() => {
-        const s = localStorage.getItem('cyberia-lang');
-        if (s === 'en' || s === 'fr') return s;
-        return (navigator.language || '').slice(0,2) === 'en' ? 'en' : 'fr';
-      })();
-
-      function applyLanguage(lang) {
-        currentLang = lang;
-        document.documentElement.lang = lang;
-        localStorage.setItem('cyberia-lang', lang);
-        document.querySelectorAll('#current-lang, #current-lang-mobile').forEach(el => el.textContent = lang.toUpperCase());
-        // Update dynamic content
-        document.querySelectorAll('[data-translate]').forEach(el => {
-          const key = el.getAttribute('data-translate');
-          const t = translations[lang] && translations[lang][key];
-          if (t != null) el.innerHTML = t;
-        });
-        // Update image alt text
-        document.querySelectorAll('[data-translate-alt]').forEach(el => {
-          const key = el.getAttribute('data-translate-alt');
-          const t = translations[lang] && translations[lang][key];
-          if (t != null) el.setAttribute('alt', t);
-        });
-        // Update SEO meta
-        const t = translations[lang];
-        document.title = t.seoTitle;
-        document.querySelector('meta[name="description"]').setAttribute('content', t.seoDescription);
-        document.querySelector('meta[property="og:title"]').setAttribute('content', t.seoTitle);
-        document.querySelector('meta[property="og:description"]').setAttribute('content', t.seoDescription);
-        document.querySelector('meta[name="twitter:title"]').setAttribute('content', t.seoTitle);
-        document.querySelector('meta[name="twitter:description"]').setAttribute('content', t.seoDescription);
-        // Update insight tag classes based on language
-        updateTagClasses();
-      }
-
-      function updateTagClasses() {
-        const tagMap = {
-          en: { Strategy: 'tag-strategy', Engineering: 'tag-engineering', Integration: 'tag-integration' },
-          fr: { 'Stratégie': 'tag-strategie', 'Ingénierie': 'tag-ingenierie', 'Intégration': 'tag-integration' }
-        };
-        document.querySelectorAll('[data-translate="insight1Tag"], [data-translate="insight2Tag"], [data-translate="insight3Tag"]').forEach(el => {
-          el.className = 'tag';
-          const text = el.textContent.trim();
-          const map = tagMap[currentLang] || tagMap.en;
-          if (map[text]) el.classList.add(map[text]);
-        });
-      }
-
-      function toggleLang() { applyLanguage(currentLang === 'fr' ? 'en' : 'fr'); }
-      document.querySelectorAll('#lang-toggle-desktop, #lang-toggle-mobile').forEach(btn => btn.addEventListener('click', toggleLang));
-
-      /* --- Mobile menu --- */
-      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-      const mobileMenu = document.getElementById('mobile-menu');
-      const hamburgerIcon = document.getElementById('hamburger-icon');
-      mobileMenuBtn.addEventListener('click', () => {
-        const open = mobileMenu.classList.toggle('open');
-        hamburgerIcon.className = open ? 'fa-solid fa-xmark text-lg' : 'fa-solid fa-bars text-lg';
-      });
-      mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        hamburgerIcon.className = 'fa-solid fa-bars text-lg';
-      }));
-
-      /* --- Header scroll --- */
-      const header = document.getElementById('header');
-      window.addEventListener('scroll', () => {
-        header.classList.toggle('scrolled', window.scrollY > 20);
-      }, { passive: true });
-
-      /* --- Scroll reveal --- */
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-      }, { threshold: 0.07, rootMargin: '0px 0px -40px 0px' });
-      document.querySelectorAll('[data-scroll]').forEach(el => observer.observe(el));
-
-      /* --- Init --- */
-      applyLanguage(currentLang);
-
-      /* --- Lottie animation --- */
-      const lottieContainer = document.getElementById('lottie-container');
-      if (lottieContainer && typeof LOTTIE_DATA !== 'undefined') {
-        const anim = lottie.loadAnimation({
-          container: lottieContainer,
-          animationData: LOTTIE_DATA,
-          autoplay: true,
-          loop: true,
-        });
-      }
-    </script>
+    <script src="main.js"></script>
   </body>
 </html>

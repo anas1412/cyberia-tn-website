@@ -1,0 +1,266 @@
+:root {
+  --white: #f6f8fa;
+  --ink: #14213d;
+  --ink-soft: #4a5670;
+  --blue: #1b5faa;
+  --blue-deep: #12407a;
+  --rule: #dce3ec;
+  --font: "Schibsted Grotesk", system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--ink);
+  font: 400 1.0625rem/1.6 var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
+
+a { color: inherit; }
+
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+}
+
+.wrap {
+  width: min(72rem, 100% - 2rem);
+  margin-inline: auto;
+}
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--white) 92%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--rule);
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  height: 4rem;
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 1.125rem;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.brand span { font-weight: 400; color: var(--ink-soft); }
+
+.nav { display: flex; gap: 1.75rem; margin-left: auto; }
+
+.nav a {
+  text-decoration: none;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.nav a:hover { color: var(--ink); }
+
+.lang {
+  font: 700 0.875rem var(--font);
+  color: var(--blue);
+  background: none;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  cursor: pointer;
+}
+
+.lang:hover { border-color: var(--blue); }
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.btn-solid { background: var(--blue); color: #fff; }
+.btn-solid:hover { background: var(--blue-deep); }
+.btn-quiet { color: var(--blue); }
+.btn-quiet:hover { text-decoration: underline; }
+.btn-light { background: #fff; color: var(--blue-deep); overflow-wrap: anywhere; }
+.btn-light:hover { background: var(--white); }
+
+/* Hero */
+.hero {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 4rem;
+  align-items: end;
+  padding-block: 5rem 6rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.75rem, 7vw, 5.25rem);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  max-width: 12ch;
+}
+
+.lead {
+  margin-top: 1.75rem;
+  font-size: 1.25rem;
+  color: var(--ink-soft);
+  max-width: 38ch;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2.25rem;
+}
+
+/* The arched door: the page's one bold element */
+/* Fixed max width + a radius of half that width keeps it a true arch at any
+   viewport; the browser scales the radius down with the width on phones. */
+.door {
+  position: relative;
+  justify-self: end;
+  width: min(24rem, 100%);
+  min-height: 32rem;
+  padding: 13rem 2.5rem 2.75rem;
+  background: var(--blue);
+  color: #fff;
+  border-radius: 12rem 12rem 0 0;
+  box-shadow: inset 0 0 0 10px var(--blue-deep);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 1rem;
+  animation: open 0.9s cubic-bezier(.2, .8, .2, 1) both;
+}
+
+/* Inner panel line, like the frame on a Sidi Bou Said door */
+.door::before {
+  content: "";
+  position: absolute;
+  inset: 1.5rem 1.5rem 0;
+  border: 2px solid rgb(255 255 255 / 0.22);
+  border-bottom: 0;
+  border-radius: 10.5rem 10.5rem 0 0;
+  pointer-events: none;
+}
+
+.door h2 { font-size: 1.5rem; font-weight: 700; line-height: 1.2; }
+.door p { color: #dbe7f6; }
+.door .btn { align-self: flex-start; margin-top: 0.5rem; }
+
+@keyframes open {
+  from { transform: translateY(2rem); opacity: 0; }
+}
+
+/* Sections */
+.section {
+  display: grid;
+  grid-template-columns: 16rem 1fr;
+  gap: 2rem 4rem;
+  padding-block: 5rem;
+  border-top: 1px solid var(--rule);
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
+
+.services { list-style: none; padding: 0; }
+
+.services li {
+  display: grid;
+  grid-template-columns: 15rem 1fr;
+  gap: 2rem;
+  padding-block: 1.75rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.services li:first-child { padding-top: 0; }
+.services li:last-child { border-bottom: 0; }
+.services p, .steps p { color: var(--ink-soft); max-width: 60ch; }
+
+.about p { max-width: 60ch; font-size: 1.25rem; }
+.about .skills { margin-top: 1.5rem; font-size: 1rem; color: var(--blue); font-weight: 500; }
+
+.steps {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  counter-reset: step;
+}
+
+.steps li { counter-increment: step; }
+
+.steps li::before {
+  content: counter(step);
+  display: block;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--blue);
+  margin-bottom: 1rem;
+}
+
+.steps h3 { margin-bottom: 0.5rem; }
+
+.contact-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.contact-list dt { color: var(--ink-soft); font-size: 0.9375rem; }
+.contact-list dd { font-size: 1.375rem; font-weight: 700; }
+.contact-list a { text-decoration-color: var(--rule); text-underline-offset: 0.2em; }
+.contact-list a:hover { color: var(--blue); text-decoration-color: currentColor; }
+
+.site-footer {
+  padding-block: 2rem 3rem;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-soft);
+  font-size: 0.9375rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero, .section { grid-template-columns: 1fr; }
+  .hero { gap: 3rem; padding-block: 3rem 4rem; }
+  .door { justify-self: start; min-height: 0; }
+  .steps { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .nav { display: none; }
+  .lang { margin-left: auto; }
+  .section { padding-block: 3.5rem; }
+  .services li { grid-template-columns: 1fr; gap: 0.5rem; }
+  .steps, .contact-list { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .door { animation: none; }
+}
